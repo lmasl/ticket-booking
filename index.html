@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Ticket Reservation Widget</title>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="style/reset.css">
+	<link rel="stylesheet prefetch"
+		href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/css/bootstrap-datepicker3.standalone.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="style/main.css">
+	<link href='https://fonts.googleapis.com/css?family=Bree+Serif' rel='stylesheet' type='text/css'>
+	<script src="js/jquery.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-dateFormat/1.0/jquery.dateFormat.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.0/js/bootstrap-datepicker.min.js"></script>
+	<script src="js/jquery.twidget.js"></script>
+	<script src="js/icon.js"></script>
+
+</head>
+<body>
+
+	<div class="container">
+
+
+		<div class="twidget-container" id="twidget"></div>
+		<br><br>
+		<audio id="buttonPressed" src="media/button-3.wav" preload="auto"></audio>
+		<script>
+			$('#twidget').twidget({
+				locale: 'ru',
+				marker: 78606,
+				open_in_new_tab: false,
+				default_origin: 'SVO',
+				default_destination: 'ekat',
+				default_hotel_location: 'rio'
+
+			});
+		</script>
+		<div class="footer">
+			<section>
+				<div class="social-share fb">
+					<span class="fb-inner"></span>
+					<a class="cta fb" href="#">Like</a>
+				</div>
+				<div class="social-share tw">
+					<span class="tw-inner"></span>
+					<a class="cta tw" href="#">Tweet</a>
+				</div>
+			</section>
+		</div>
+		<div id="map-canvas"></div>
+
+	</div>
+
+	
+	
+	<script src="https://maps.googleapis.com/maps/api/js?sensor=false&libraries=geometry&key=AIzaSyCEsaxD9x19I2M3DFbAYSriu07Asj0KhjE"></script>
+	<script src="js/plane.js"></script>
+
+	<script>
+		$('#searchTickets, #searchHotel').click(function() {
+			document.getElementById('buttonPressed').play();
+		});
+
+	</script>
+</body>
+</html>
